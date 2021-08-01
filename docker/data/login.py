@@ -17,10 +17,10 @@ app = Flask(__name__)
 def do_login(data):
 
     try:
-        connection = mariadb.connect(host='otdb',
-                                database='otserver',
-                                user='otserver',
-                                password='otserver')
+        connection = mariadb.connect(host='127.0.0.1',
+                                database='novoot',
+                                user='root',
+                                password='8108441Douglas@')
 
         sql_select_Query = "SELECT id, premdays, lastday FROM accounts WHERE name = '" + data['accountname'] + "'"
 
@@ -85,7 +85,7 @@ def do_login(data):
             'worlds': [
                 {
                     'id': 0,
-                    'name': 'OTServBR-Global',
+                    'name': 'BaiakGlobal',
                     'externaladdressprotected': '127.0.0.1',
                     'externalportprotected': 7172,
                     'externaladdressunprotected': '127.0.0.1',
@@ -100,7 +100,7 @@ def do_login(data):
                 },
                 {
                     'id': 1,
-                    'name': 'OTServBR-Global',
+                    'name': 'BaiakGlobal',
                     'externaladdressprotected': '127.0.0.1',
                     'externalportprotected': 7172,
                     'externaladdressunprotected': '127.0.0.1',
@@ -256,4 +256,4 @@ def action():
     if(data['type'] == 'news'):
         return news(data)
 
-app.run(debug=True, host='0.0.0.0', port=80)
+app.run(debug=false, host='0.0.0.0', port=80)
